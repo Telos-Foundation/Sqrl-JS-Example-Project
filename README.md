@@ -4,7 +4,7 @@
 - npm install -g @angular/cli@1.7.4
 - npm i
 
-# Wapii
+# EXAMPLE PROJECT
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
