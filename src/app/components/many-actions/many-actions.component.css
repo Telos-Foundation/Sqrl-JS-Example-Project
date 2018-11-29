@@ -1,0 +1,22 @@
+:host {
+  display: block;
+  margin: 5px;
+}
+
+:host > form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+:host .boxes {
+  width: 50%;
+  padding: 10px;
+}
+
+:host > form .mat-card-content-box > :nth-last-child(n+2) {
+  margin-bottom: 10px;
+}
+
+:host > form .mat-card-content-box > :nth-child(n) > :nth-child(n) {
+  width: 100%;
+}

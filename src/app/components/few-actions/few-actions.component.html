@@ -1,0 +1,167 @@
+<form
+  (submit)="send()"
+  [formGroup]="formGroup"
+  autocomplete="off"
+  spellcheck="false">
+
+  <div class="boxes">
+    <mat-card formGroupName="buyrambytes" class="mat-card-box">
+      <mat-card-title>
+        Buy RAM bytes
+      </mat-card-title>
+      <mat-card-content class="mat-card-content-box">
+        <div>
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput type="text" placeholder="Payer" formControlName="payer" [required]="true">
+            <mat-hint>length 12, lowercase a-z, 1-5</mat-hint>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput type="text" placeholder="Receiver" formControlName="receiver" [required]="true">
+            <mat-hint>length 12, lowercase a-z, 1-5</mat-hint>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput type="number" placeholder="Bytes" formControlName="bytes" [required]="true">
+            <mat-hint>number</mat-hint>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+  <div class="boxes">
+    <mat-card class="mat-card-box" formGroupName="sellram">
+      <mat-card-title>
+        Sell RAM
+      </mat-card-title>
+      <mat-card-content class="mat-card-content-box">
+        <div>
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput type="text" placeholder="Account" formControlName="account" [required]="true">
+            <mat-hint>length 12, lowercase a-z, 1-5</mat-hint>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput type="number" placeholder="Bytes" formControlName="bytes" [required]="true">
+            <mat-hint>number</mat-hint>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="boxes">
+    <mat-card class="mat-card-box" formGroupName="delegatebw">
+      <mat-card-title>
+        Delegate bandwidth
+      </mat-card-title>
+      <mat-card-content class="mat-card-content-box">
+        <div>
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput type="text" placeholder="From" formControlName="from" [required]="true">
+            <mat-hint>length 12, lowercase a-z, 1-5</mat-hint>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput type="text" placeholder="Receiver" formControlName="receiver" [required]="true">
+            <mat-hint>length 12, lowercase a-z, 1-5</mat-hint>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput type="number" placeholder="Stake net quantity" formControlName="stake_net_quantity" [required]="true">
+            <mat-hint>number</mat-hint>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput type="number" placeholder="Stake cpu quantity" formControlName="stake_cpu_quantity" [required]="true">
+            <mat-hint>number</mat-hint>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput type="number" placeholder="Transfer" formControlName="transfer" [required]="true">
+            <mat-hint>number</mat-hint>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="boxes">
+    <mat-card class="mat-card-box" formGroupName="transfer">
+      <mat-card-title>
+        Transfer
+      </mat-card-title>
+      <mat-card-content class="mat-card-content-box">
+        <div>
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput type="text" placeholder="From" formControlName="from" [required]="true">
+            <mat-hint>length 12, lowercase a-z, 1-5</mat-hint>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput type="text" placeholder="To" formControlName="to" [required]="true">
+            <mat-hint>length 12, lowercase a-z, 1-5</mat-hint>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput type="number" placeholder="Quantity" formControlName="quantity" [required]="true">
+            <mat-hint>number</mat-hint>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput type="text" placeholder="Memo" formControlName="memo" [required]="true">
+            <mat-hint>length 12, lowercase a-z, 1-5</mat-hint>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="boxes">
+    <mat-card class="mat-card-box" formGroupName="voteproducer">
+      <mat-card-title>
+        Vote producer
+      </mat-card-title>
+      <mat-card-content class="mat-card-content-box">
+        <div>
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput type="text" placeholder="Voter" formControlName="voter" [required]="true">
+            <mat-hint>length 12, lowercase a-z, 1-5</mat-hint>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput type="text" placeholder="Proxy" formControlName="proxy" [required]="true">
+            <mat-hint>length 12, lowercase a-z, 1-5</mat-hint>
+          </mat-form-field>
+        </div>
+        <!-- <div>
+          <mat-form-field [hideRequiredMarker]="false">
+            <input matInput type="text" placeholder="Producers" formControlName="producers" [required]="true">
+            <mat-hint>length 12, lowercase a-z, 1-5</mat-hint>
+          </mat-form-field>
+        </div> -->
+        <div>
+          Producers: {{ formGroup.value.voteproducer.producers | json }}
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="boxes">
+    <button type="submit" mat-raised-button color="primary">
+      Send
+    </button>
+  </div>
+</form>
