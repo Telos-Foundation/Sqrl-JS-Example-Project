@@ -1,8 +1,8 @@
 # Requirements
 
-nodejs 9.5
-npm install -g @angular/cli@1.7.4
-npm i
+- nodejs 9.5
+- npm install -g @angular/cli@1.7.4
+- npm i
 
 # Wapii
 
