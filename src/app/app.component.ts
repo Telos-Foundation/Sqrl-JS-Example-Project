@@ -69,13 +69,18 @@ export class AppComponent implements OnInit {
     id: 'tlos'
   };
 
+  networkHostFC: FormControl;
+  networkPortFC: FormControl;
+  networkChainIdFC: FormControl;
+  networkProtocolFC: FormControl;
+
   network = {
     blockchain: this.blockchain.name,
     keyPrefix: "EOS",
-    protocol: 'http',
-    host: '18.223.79.140',
-    port: 8888,
-    chainId: '335e60379729c982a6f04adeaad166234f7bf5bf1191252b8941783559aec33e'
+    protocol: 'https',
+    host: 'testnet.eos.miami',
+    port: 443,
+    chainId: 'e17615decaecd202a365f4c029f206eee98511979de8a5756317e2469f2289e3'
   };
 
   responsesToDisplay = {
@@ -106,12 +111,26 @@ export class AppComponent implements OnInit {
     this._scatter = ScatterJS.scatter;
 
     this.appNameFC = new FormControl('');
+    this.networkHostFC = new FormControl('');
+    this.networkPortFC = new FormControl('');
+    this.networkChainIdFC = new FormControl('');
+    this.networkProtocolFC = new FormControl('');
+
+    this.networkHostFC.valueChanges.do((val) => this.network.host = val).subscribe();
+    this.networkPortFC.valueChanges.do((val) => this.network.port = val).subscribe();
+    this.networkChainIdFC.valueChanges.do((val) => this.network.chainId = val).subscribe();
+    this.networkProtocolFC.valueChanges.do((val) => this.network.protocol = val).subscribe();
+
     this.appNameFC.valueChanges
       .map((name) => name.trim().toUpperCase().replace(/ /g, "_"))
       .do((name) => this.appName = name)
       .subscribe();
     
     this.appNameFC.setValue('MY_TELOS_APP');
+    this.networkHostFC.setValue(this.network.host);
+    this.networkPortFC.setValue(this.network.port);
+    this.networkChainIdFC.setValue(this.network.chainId);
+    this.networkProtocolFC.setValue(this.network.protocol);
   }
 
   connectToWallet() {

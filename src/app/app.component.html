@@ -28,10 +28,31 @@
       <input matInput type="text" placeholder="Application Name" [formControl]="appNameFC">
       <mat-hint>string</mat-hint>
     </mat-form-field>
+    <br/>
+    Network:
+    <br/>
+    <br/>
+    
+    <mat-form-field>
+      <input matInput type="text" placeholder="PROTOCOL" [formControl]="networkProtocolFC">
+      <mat-hint>string</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" placeholder="HOST" [formControl]="networkHostFC">
+      <mat-hint>string</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="number" placeholder="PORT" [formControl]="networkPortFC">
+      <mat-hint>number</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" placeholder="CHAIN ID" [formControl]="networkChainIdFC">
+      <mat-hint>string</mat-hint>
+    </mat-form-field>
   </ng-template>
 
   <mat-card *ngIf="identity">
-    <p>publicKey: <strong>{{ identity.publicKey }}</strong></p>
+    <p>Identity auth publicKey (different from account public key, valid until wallet reset): <strong>{{ identity.publicKey }}</strong></p>
     <p *ngIf="account">selected account: <strong>{{ account.name }}</strong></p>
   </mat-card>
 
